@@ -128,6 +128,14 @@ contract Token {
         return true;
     }
     
+    function mint(uint256 _amount) public returns (bool) {
+        require(msg.sender == owner);
+        totalSupply += _amount;
+        balances[owner] += _amount;
+        return true;
+    }
+    
+    
     
 }
     
